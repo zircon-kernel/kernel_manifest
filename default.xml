@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote  name="aosp" fetch=".." review="https://android-review.googlesource.com/" />
+  <remote  name="aosp" fetch="https://android-review.googlesource.com/" />
+  <remote name="sarthak" fetch="https://github.com/sarthakroy2002" revision="android-14" />
+
   <default revision="master-kernel-build-2021" remote="aosp" sync-j="4" />
 
   <superproject name="kernel/superproject" remote="aosp" revision="common-android12-5.10" />
 
-  <project path="build" name="kernel/build" />
-  <project path="hikey-modules" name="kernel/hikey-modules" revision="android12-5.10" />
-  <project path="common" name="kernel/common" revision="android12-5.10" />
-  <project path="kernel/tests" name="kernel/tests" />
-  <project path="kernel/configs" name="kernel/configs" />
-  <project path="common-modules/virtual-device" name="kernel/common-modules/virtual-device" revision="android12-5.10" />
-  <project path="prebuilts-master/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" />
-  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" />
-  <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" />
-  <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" />
+  <project path="build" name="kernel/build" remote="aosp" />
+  <project path="kernel/tests" name="kernel/tests" remote="aosp" />
+  <project path="kernel/configs" name="kernel/configs" remote="aosp" />
+  <project path="common-modules/virtual-device" name="kernel/common-modules/virtual-device" revision="android12-5.10" remote="aosp" />
+  <project path="prebuilts-master/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" remote="aosp" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" remote="aosp" />
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" remote="aosp" />
+  <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" remote="aosp" />
+  <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" remote="aosp" />
+
+  <project path="kernel-5.10" name="kernel_motorola_cancunf" remote="sarthak" clone-depth="1" >
+    <linkfile dest="build.config" src="build.config.cancunf" />
+  </project>
+
+  <project path="vendor" name="kernel_motorola_cancunf-modules" remote="sarthak" clone-depth="1" />
+
 </manifest>
