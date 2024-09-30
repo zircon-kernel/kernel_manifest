@@ -3,7 +3,7 @@
 Sync using
 
 ```bash
-repo init -u https://github.com/sarthakroy2002/kernel_manifest.git -b android12-5.10-cancunf
+repo init -u https://github.com/zircon-kernel/kernel_manifest.git -b master
 repo sync
 ```
 

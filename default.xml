@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <remote  name="aosp" fetch="https://android-review.googlesource.com/" />
-  <remote name="sarthak" fetch="https://github.com/sarthakroy2002" revision="android-14" />
+  <remote name="zircon-kernel" fetch="https://github.com/zircon-kernel" />
 
   <default revision="master-kernel-build-2021" remote="aosp" sync-j="4" />
 
@@ -16,11 +16,5 @@
   <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" remote="aosp" />
   <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" remote="aosp" />
   <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" remote="aosp" />
-
-  <project path="kernel-5.10" name="kernel_motorola_cancunf" remote="sarthak" clone-depth="1" >
-    <linkfile dest="build.config" src="build.config.cancunf" />
-  </project>
-
-  <project path="vendor" name="kernel_motorola_cancunf-modules" remote="sarthak" clone-depth="1" />
 
 </manifest>
